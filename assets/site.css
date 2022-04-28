@@ -1,0 +1,46 @@
+:root {
+    --primary-bg-color: #004494;
+}
+
+.navbar-brand img{
+    height: 30px;
+}
+.bg-primary-ucs {
+    background-color: var(--primary-bg-color);
+}
+#navegacao .navbar-toggler{
+    border: 1px solid #fff;
+}
+#navegacao .btn-primary{
+    background-color: var(--primary-bg-color);
+}
+.btn-primary:focus,
+.btn-primary:active {
+    border: 2px solid #fff;
+    color: #fff;    
+    border-color: var(--primary-bg-color);
+    box-shadow:unset; 
+}
+.btn-primary:active:focus{
+    border: 2px solid #fff;
+    color: #fff;    
+    border-color: var(--primary-bg-color);
+    box-shadow:unset; 
+}
+#collapsible-menu-navegacao.collapse.show{
+    display: flex;
+    height: calc(100vh - 115px); 
+    
+}
+
+#collapsible-menu-navegacao.collapse.show > .navbar-nav{
+    align-items: center;
+    width: 100%;
+}
+#collapsible-menu-navegacao.collapse.show > .navbar-nav .nav-link{
+    font-size: 24px;
+    text-transform: uppercase;
+}
+#progresso{
+    height: 8px;
+}

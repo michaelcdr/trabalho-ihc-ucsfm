@@ -1,7 +1,14 @@
+*{
+    font-family: 'Barlow Condensed', sans-serif;
+}
 :root {
     --primary-bg-color: #004494;
+    --ucs-color:#0074bc;
 }
-
+body{
+    padding-top: 60px;
+    background-color: #f5f5f5;
+}
 .navbar-brand img{
     height: 30px;
 }
@@ -29,8 +36,7 @@
 }
 #collapsible-menu-navegacao.collapse.show{
     display: flex;
-    height: calc(100vh - 115px); 
-    
+    height: 100vh;    
 }
 
 #collapsible-menu-navegacao.collapse.show > .navbar-nav{
@@ -41,6 +47,28 @@
     font-size: 24px;
     text-transform: uppercase;
 }
-#progresso{
+#progresso {
     height: 8px;
+}
+#escolha-radio{
+    height: calc(100vh - 180px);
+    margin: 0px;
+}
+#escolha-radio li{
+    padding: 10px;
+    background-color: var(--ucs-color);
+    border-radius: 20px;
+    text-align: left;
+    border:4px solid var(--primary-bg-color);
+}
+#escolha-radio a{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 40px;
+    font-weight: 600;
+    color: #fff;
+}
+#escolha-radio li .frequencia::after{
+    content: " » ";
+    margin-right: 10px;
 }

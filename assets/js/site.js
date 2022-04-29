@@ -1,3 +1,7 @@
+Array.prototype.random = function () {
+    return this[Math.floor((Math.random()*this.length))];
+  }
+
 var noticias = [
     {
         titulo : "Com Parkinson, Ozzy Osbourne adapta própria mansão",
@@ -19,14 +23,39 @@ var noticias = [
     }
 ];
 
+var radios = [
+    {
+        titulo: "Caxias - 106.5"       
+    },
+    {
+        titulo: "Bento - 106.5"        
+    }
+];
+
+var musicas  = [
+    { 
+        banda : "Iron Maiden",
+        titulo : "The Wickerman"
+    },{ 
+        banda : "Iron Maiden",
+        titulo : "Run To The Hills"
+    },{
+        banda:"Metallica",
+        titulo:"Master of Puppets"
+    },{
+        banda:"Metallica",
+        titulo:"Battery"
+    }
+];
+
 var links = document.querySelectorAll("#escolha-radio li");
 links.forEach(function(link){
     link.addEventListener('click', function(ev){
         ev.preventDefault();
         localStorage.setItem('radio', ev.target.dataset.radio);
+        document.location = "radio.html";
     });
 });
-
 
 function obterNoticiasPorRadio(radio){
     return noticias.filter(noticia => noticia.radio == radio);

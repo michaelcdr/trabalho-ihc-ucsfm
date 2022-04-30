@@ -116,3 +116,24 @@ body{
     border: 2px solid var(--ucs-color);
     transition: all 0.4s;
 }
+
+/* container de botoes do radio principal*/
+#radio-container a:link,
+#radio-container a:visited{
+    color: #fff;
+    transition: all 0.4s;
+}
+#radio-container a:hover{
+    color:var(--ucs-color);
+    transition: all 0.4s;
+}
+#radio-container a:link{
+    color: #fff;
+    transition: all 0.4s;
+}
+#radio-container a:focus,
+#radio-container a:active
+{
+    color:var(--ucs-color);
+    transition: all 0.4s;
+}

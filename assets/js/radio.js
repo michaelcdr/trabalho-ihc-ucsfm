@@ -14,7 +14,7 @@ function listarNoticias(){
     noticias.forEach(noticia => {
         htmlNoticia += `<div class='card p-3 mb-3'>
         <h3>${noticia.titulo}</h3>
-        <span>${noticia.data}</span>
+        <strong>${noticia.data}</strong>
         <div class='descritivo'>${noticia.descritivo}</div>
         </div>`;
     });
@@ -41,5 +41,3 @@ function obterDadosRadioAtual(){
 
 listarNoticias();
 obterDadosRadioAtual();
-
-

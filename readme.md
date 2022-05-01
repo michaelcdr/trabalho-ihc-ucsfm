@@ -9,10 +9,10 @@ A programação é a mesma nas 3 unidades, somente a publicidade é a da localid
 
 #### Recursos
 
-- Ouvir a programação ao vivo da rádio;
-- Visualizar as informações da música que está tocando e criar uma playlist com as músicas favoritas (esta playlist deve armazenar nome da música e cantor/banda);
-- Acessar as principais notícias da rádio;
-- Ter opção de acessar as páginas complementares da rádio (Facebook, site e Twitter).
+- [x] Ouvir a programação ao vivo da rádio;
+- [x] Visualizar as informações da música que está tocando e criar uma playlist com as músicas favoritas (esta playlist deve armazenar nome da música e cantor/banda);
+- [x] Acessar as principais notícias da rádio;
+- [x] Ter opção de acessar as páginas complementares da rádio (Facebook, site e Twitter).
 
 Fazer protótipos de interface para o aplicativo da UCSfm apresentando:
 

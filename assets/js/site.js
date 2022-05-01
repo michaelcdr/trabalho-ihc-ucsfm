@@ -1,21 +1,24 @@
 Array.prototype.random = function () {
     return this[Math.floor((Math.random()*this.length))];
-  }
+}
 
 var noticias = [
     {
+        id:1,
         titulo : "Com Parkinson, Ozzy Osbourne adapta própria mansão",
         data:"28 de abril de 2022",
         descritivo:"Ozzy Osbourne, que revelou sofrer da Doença de Parkinson há 17 anos, afirmou que a mansão, Welders House, que fica em Buckinghamshire, na Inglaterra, foi totalmente adaptada com barras de apoio e superfícies antiderrapantes para atender as necessidades de saúde dele. As informações são do Daily Mail. O cantor, de 73 anos, ressaltou que conta com uma equipe de enfermagem em tempo integral para atendê-lo, além disso, tem um estúdio de exercício e bem-estar.",
         radio : "caxias"
     },
     {
+        id:2,
         titulo:"Guns N’ Roses volta às paradas após Thor; entenda",
         data:"28 de abril de 2022",
         radio : "caxias",
         descritivo:"O Guns N’ Roses voltou às paradas da Billboard. A faixa “Sweet Child O’ Mine”, do disco “Appetite for Destruction” (1987), é a trilha sonora do primeiro trailer de “Thor: Amor e Trovão” (2022), e ganhou repercussão em rádios e na internet. Segundo a Billboard, música entrou na Hot Hard Rock Songs em primeiro lugar, e na Hot Rock & Alternative Songs, na nona posição."
     },
     {
+        id:3,
         titulo:"The Boys: 3ª temporada ganha teaser eletrizante; veja",
         data:"28 de abril de 2022",
         radio : "bento",
@@ -97,4 +100,43 @@ function listarItensPlaylists(){
     });
 
     playlistsEl.innerHTML = html;
+}
+
+
+function listarNoticias(){
+    const noticias = obterNoticiasPorRadio(localStorage.getItem('radio'));
+
+    let htmlNoticia = '';
+    noticias.forEach(noticia => {
+        htmlNoticia += obterHtmlNoticia(noticia,false);
+    });
+
+    document.querySelector("#noticias").innerHTML = htmlNoticia;
+
+    var btnsDetalhar = document.querySelectorAll('.btn-detalhar-noticia');
+
+    btnsDetalhar.forEach(btn =>{
+        btn.addEventListener('click',function(ev){
+            ev.preventDefault();
+            
+            localStorage.setItem('noticia-atual',this.dataset.id);
+
+            document.location = "noticias-detalhes.html"
+        })
+    })
+}
+
+function obterHtmlNoticia(noticia, semVermais){
+    return `<div class='card p-3 mb-3'>
+    <h3>${noticia.titulo}</h3>
+    <strong>${noticia.data}</strong>
+    <div class='descritivo'>${noticia.descritivo}</div>
+    ${(semVermais ? '': "<a class='btn btn-outline-primary btn-sm mt-2 btn-detalhar-noticia' href='#' data-id='"+noticia.id+"'>Ver mais</a>")}
+    </div>`; 
+}
+
+function detalharNoticia(id){
+    var noticia = noticias.find(e => e.id == id); 
+    var html =  obterHtmlNoticia(noticia,true);
+    document.querySelector('#detalhes-noticia').innerHTML = html;
 }

@@ -53,5 +53,23 @@ function obterDadosRadioAtual(){
     document.querySelector(`#troca-de-radio li[data-radio='${radio}']`).classList.add('active');
 }
 
+function gerarItensCarrosel(){
+    var radio = localStorage.getItem('radio');
+    var radioEncontrada = radios.find(radioAtual => radioAtual.id == radio);
+    
+    var htmlCarrossel = '';
+    if (radioEncontrada === null || radioEncontrada.publicidade.length === 0){
+        document.querySelector('#publicidade').classList.add('visually-hidden')
+        return;
+    }
+    radioEncontrada.publicidade.forEach((item,index) =>{
+        htmlCarrossel += `<div class="carousel-item ${(index == 0 ? "active" : "")}">
+        <img src="${item}" class="d-block w-100" alt="...">
+        </div>`;
+    });
+    document.querySelector('.carousel-inner').innerHTML = htmlCarrossel;           
+}
+
 listarNoticias();
 obterDadosRadioAtual();
+gerarItensCarrosel();

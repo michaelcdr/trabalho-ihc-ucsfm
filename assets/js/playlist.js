@@ -8,8 +8,6 @@ btns.forEach(btn => {
 });
 
 function deletarItemPlaylist(){
-    console.log('abrir confirmação');
-    if (confirm("Deseja excluir o item clicado?")){
-
-    }
+    if (confirm("Deseja excluir o item clicado?"))
+        console.log('excluido com sucesso');
 }
